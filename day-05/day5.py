@@ -86,10 +86,11 @@ def count_overlap():
     return count
 
 # Part 1 answer:
-# for vector in data:
-#     add_points(vector)
-# print("Part 1 answer:",count_overlap())
-
+def part_1():
+    for vector in data:
+        add_points(vector)
+    print("Part 1 answer:",count_overlap())
+# part_1()
 
 
 # --- Part Two ---
@@ -129,8 +130,10 @@ def add_diagonal_points(vector):
     grid[y2][x2] += 1
 
 # Part 2 answer
-for vector in data:
-    isDiagonal = add_points(vector) 
-    if(isDiagonal): add_diagonal_points(vector)
+def part_2():
+    for vector in data:
+        isDiagonal = add_points(vector) 
+        if(isDiagonal): add_diagonal_points(vector)
 
-print("Part 2 answer:",count_overlap())
+    print("Part 2 answer:",count_overlap())
+# part_2()
