@@ -37,15 +37,16 @@
 
 # Consider only horizontal and vertical lines. At how many points do at least two lines overlap?
 
-data = [line.strip().rsplit(" -> ") for line in open("input.txt","r")]
+data = [[tuple(map(int, first.split(','))),tuple(map(int, second.split(',')))] for line in open("test.txt","r") for [first, second] in [line.strip().rsplit(" -> ")]]
 
 # Create 9x9 grid for storing overlapping point
 grid = [[0 for x in range(990)] for y in range(990)]
 
-# How to do this with list comprehesion?
-for vector in range(len(data)): 
-    for point in range(2):
-        data[vector][point] = tuple(map(int, data[vector][point].split(',')))
+# How to do this with list comprehesion? DONE
+# data = [line.strip().rsplit(" -> ") for line in open("test.txt","r")]
+# for vector in range(len(data)): 
+#     for point in range(2):
+#         data[vector][point] = tuple(map(int, data[vector][point].split(',')))
 
 # Prints grid
 def print_grid():
@@ -90,7 +91,7 @@ def part_1():
     for vector in data:
         add_points(vector)
     print("Part 1 answer:",count_overlap())
-# part_1()
+part_1()
 
 
 # --- Part Two ---
